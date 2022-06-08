@@ -11,6 +11,9 @@ container.addEventListener("click", (e) => {
     e.target.parentElement.previousElementSibling.innerHTML = sonuc * -1;
   } else if (e.target.parentElement.classList.contains("main")) {
     null;
+  } else if (tus == "%") {
+    let sonuc = e.target.parentElement.previousElementSibling.innerHTML;
+    e.target.parentElement.previousElementSibling.innerHTML = sonuc * 0.01;
   } else if (e.target.innerHTML == "+") {
     screen.innerHTML = calc.innerHTML + "+";
     calc.innerHTML = "";
@@ -23,6 +26,12 @@ container.addEventListener("click", (e) => {
   } else if (e.target.innerHTML == "÷") {
     screen.innerHTML = calc.innerHTML + "÷";
     calc.innerHTML = "";
+  } else if (e.target.innerHTML == ".") {
+    if (calc.innerHTML.includes(".")) {
+      calc.innerHTML += "";
+    } else {
+      calc.innerHTML += ".";
+    }
   } else if (e.target.innerHTML == "=") {
     if (screen.innerHTML.slice(screen.innerHTML.length - 1) == "+") {
       let sonuc =
