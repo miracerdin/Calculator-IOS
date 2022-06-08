@@ -6,6 +6,8 @@ container.addEventListener("click", (e) => {
   let tus = e.target.innerHTML;
   if (tus == "AC") {
     e.target.parentElement.previousElementSibling.innerHTML = "0";
+    e.target.parentElement.previousElementSibling.previousElementSibling.innerHTML =
+      " ";
   } else if (tus == "±") {
     let sonuc = e.target.parentElement.previousElementSibling.innerHTML;
     e.target.parentElement.previousElementSibling.innerHTML = sonuc * -1;
