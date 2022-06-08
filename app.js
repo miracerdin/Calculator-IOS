@@ -62,6 +62,10 @@ container.addEventListener("click", (e) => {
       screen.innerHTML = "";
     }
   } else {
+    if (calc.innerHTML == "0") {
+      calc.innerHTML = "";
+    }
+
     calc.innerHTML += tus;
     if (calc.innerHTML.length > 16) {
       calc.style.fontSize = "1rem";
