@@ -13,15 +13,12 @@ body {
   height: 150vh;
   overflow: hidden;
 }
-/* .screen {
-  height: 100px;
-  width: 300px;
-  background-color: aqua;
-} */
+
 main {
   border-radius: 35px;
   background-color: var(--siyah);
   margin-top: 10px;
+  max-width: 310px;
 }
 .screen,
 .calc {

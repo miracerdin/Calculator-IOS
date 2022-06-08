@@ -5,6 +5,7 @@ const calc = document.querySelector(".calc");
 container.addEventListener("click", (e) => {
   let tus = e.target.innerHTML;
   if (tus == "AC") {
+    calc.style.fontSize = "2rem";
     e.target.parentElement.previousElementSibling.innerHTML = "0";
     e.target.parentElement.previousElementSibling.previousElementSibling.innerHTML =
       " ";
@@ -62,5 +63,12 @@ container.addEventListener("click", (e) => {
     }
   } else {
     calc.innerHTML += tus;
+    if (calc.innerHTML.length > 16) {
+      calc.style.fontSize = "1rem";
+      screen.style.fontSize = "1.2rem";
+    } else {
+      calc.style.fontSize = "2rem";
+      screen.style.fontSize = "2rem";
+    }
   }
 });
