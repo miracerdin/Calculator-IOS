@@ -4,6 +4,7 @@ const calc = document.querySelector(".calc");
 
 container.addEventListener("click", (e) => {
   let tus = e.target.innerHTML;
+
   if (tus == "AC") {
     calc.style.fontSize = "2rem";
     e.target.parentElement.previousElementSibling.innerHTML = "0";
@@ -58,21 +59,25 @@ container.addEventListener("click", (e) => {
       let sonuc =
         Number(screen.innerHTML.slice(0, screen.innerHTML.length - 1)) /
         Number(calc.innerHTML);
+
       calc.innerHTML = sonuc;
       screen.innerHTML = "";
     }
   } else {
     if (calc.innerHTML == "0") {
       calc.innerHTML = "";
-    }
-
-    calc.innerHTML += tus;
-    if (calc.innerHTML.length > 16) {
-      calc.style.fontSize = "1rem";
-      screen.style.fontSize = "1.2rem";
     } else {
-      calc.style.fontSize = "2rem";
-      screen.style.fontSize = "2rem";
+      calc.innerHTML += tus;
     }
+  }
+
+  if (calc.innerHTML.length > 16) {
+    calc.style.fontSize = "1rem";
+  } else if (screen.innerHTML.length > 16) {
+    screen.style.fontSize = "1.2rem";
+    calc.style.fontSize = "2rem";
+  } else {
+    calc.style.fontSize = "2rem";
+    screen.style.fontSize = "2rem";
   }
 });
